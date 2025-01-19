@@ -1,0 +1,582 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>contact Page</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
+  
+  <style>
+html{
+    scroll-behavior: smooth;
+  }
+    body{
+        font-family: "Playfair Display", serif;
+    }
+    
+
+    .animate-on-scroll {
+  opacity: 0;
+  transform: translateY(50px);
+  transition: opacity 0.4s ease-out, transform 0.4s ease-out;
+}
+
+.animate-on-scroll.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+    .navbar {
+      background-color: #d1d1d1;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 1000;
+      /* height: 100px; Increased height */
+    display: flex;
+    align-items: center;
+    }
+
+    .navbar-nav .nav-link {
+      color: #000;
+    }
+
+    .navbar-nav .nav-link:hover {
+      color: #E76A24;
+    }
+
+    .navbar .btn-contact {
+      background-color: #E76A24;
+      color: #fff;
+      font-weight: 500;
+      font-size: 1.2em;
+    }
+    .navbar a{
+      font-weight: 500;
+      font-size: 1.2em;
+    }
+
+    /* hero-section */
+    .hero-section {
+            background-color:#474867; /* Adjust gradient to match the image */
+            color: #fff;
+            text-align: start;
+            padding: 15em 0;
+            position: relative;
+        }
+        .hero-section p {
+            font-size: 1.5rem;
+            font-weight: 500;
+            margin-bottom: 1.5em;
+        }
+  
+        .hero-section h1 {
+            font-size: 5rem;
+            font-weight: bold;
+            
+        }
+
+        .join-text h2{
+            font-size: 4em;
+        }
+
+.job-form{
+    margin-top: 8em;
+}
+
+
+ 
+
+.join-text{
+    margin-top: 10em;
+}
+   .location-card {
+    position: relative;
+    overflow: hidden;
+    border-radius: 12px;
+    height: 100%;
+    min-height: 150px;
+    text-decoration: none; /* Remove default underline */
+    color: inherit; /* Ensure text color matches */
+}
+        .location-card img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+        .location-card:hover img {
+            transform: scale(1.05);
+        }
+        .location-card .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.5); /* Overlay always present */
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 1.5rem;
+            font-weight: bold;
+            transition: background 0.3s ease; /* Slight transition for emphasis */
+        }
+        .location-card:hover .overlay {
+            background: rgba(0, 0, 0, 0.7); /* Darker overlay on hover */
+        }
+        .color-block {
+            height: 150px;
+            border-radius: 12px;
+        }
+
+
+
+
+        /* Custom alert styles */
+  .custom-alert {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    z-index: 1000;
+    animation: fadeIn 0.3s ease-in-out;
+  }
+
+  .custom-alert p {
+    margin-bottom: 20px;
+  }
+
+  .custom-alert button {
+    background-color: blue;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+  }
+
+  .custom-alert button:hover {
+    background-color: darkblue;
+  }
+
+  /* Overlay for alert */
+  .alert-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 999;
+    animation: fadeIn 0.3s ease-in-out;
+  }
+
+  /* Animations */
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+
+        @media(max-width:715px){
+            #address{
+                padding-top: 7em;
+            }
+        }
+
+        @media(max-width: 467px){
+
+        .hero-section h1 {
+            font-size: 2.9rem;
+            font-weight: 500;
+            
+        }
+  .join-text h2,  #address h4{
+    font-size: 1.5em;
+    margin-bottom: 1.5em;
+  }
+        
+        }
+</style>
+
+</head>
+
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-light py-4">
+        <div class="container">
+          <a class="navbar-brand" href="#">
+            <img src="https://weareeverise.com/wp-content/uploads/2022/10/Logo.png" alt="Logo" style="max-height: 40px;">
+          </a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto px-5">
+              <li class="nav-item">
+                <a class="nav-link" href="index.html">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="service.html">Services</a>
+              </li>
+              
+              <li class="nav-item">
+                <a class="nav-link" href="workforus.html">Work for Us</a>
+              </li>
+            </ul>
+            <a href="career.html" class="btn btn-contact ms-3">Career</a>
+          </div>
+        </div>
+      </nav>
+      
+
+  <!-- Header Section -->
+ 
+  
+  <div class="hero-section">
+    <div class="container animate-on-scroll">
+        <p class="mb-4">Job Opportunities</p> 
+        <h1>Join The champions </h1>
+    </div>
+</div>
+
+
+
+
+<div class="container job-form animate-on-scroll" id="application-form">
+    <div class="row">
+        <!-- Form Section -->
+        <div class="col-md-5 animate-on-scroll">
+            <form id="job-form">
+                
+
+                <!-- <div class="mb-3">
+                    <label for="company" class="form-label">Company name<span class="text-danger">*</span></label>
+                    <input type="text" class="form-control" id="company" required>
+                </div> -->
+
+                <div class="row">
+                    <div class="col-md-6 mb-3">
+                        <label for="firstName" class="form-label">First name<span class="text-danger">*</span></label>
+                        <input type="text" class="form-control" name="first_name" id="firstName" required>
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <label for="lastName" class="form-label">Last name<span class="text-danger">*</span></label>
+                        <input type="text" class="form-control" name="last_name" id="lastName" required>
+                    </div>
+                </div>
+
+                <div class="mb-3">
+                    <label for="title" class="form-label">Specialization<span class="text-danger">*</span></label>
+                    <input type="text" class="form-control" name="specialization" id="title" required>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-6 mb-3">
+                        <label for="state" class="form-label">state<span class="text-danger">*</span></label>
+                        <input type="text" class="form-control" name="state" id="phone" required>
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <label for="email" class="form-label">Email<span class="text-danger">*</span></label>
+                        <input type="email" class="form-control" name="email" id="email" required>
+                    </div>
+                </div>
+
+                <div class="mb-3">
+                  <select class="form-select" name="remote_in_office" required>
+                    <option value="" disabled selected>REMOTE   or   IN OFFICE</option>
+                    <option value="remote">Remote</option>
+                    <option value="in_office">In Office</option>
+                  </select>
+                </div>
+                <div class="mb-3">
+                    <label for="message" name="message" class="form-label">Your message<span class="text-danger">*</span></label>
+                    <textarea class="form-control" id="message" rows="4" required></textarea>
+                </div>
+
+                <button type="submit" class="btn" style="background-color: #E76A24; color: #fff;">Submit</button>
+            </form>
+        </div>
+
+        <!-- Headquarters Section -->
+        <div class="col-md-5 d-flex flex-column align-items-center justify-content-center text-center" id="address">
+            <h4 class="">Global Headquarters</h4>
+            <p>Find our headquarters in warm and sunny Florida.</p>
+            <address>
+                600 N. Pine Island Road, Suite 320<br>
+                Plantation, FL 33324, USA
+            </address>
+
+            <!-- <div class="mt-3">
+                <a href="#" class="me-5">
+                    <i class="bi bi-facebook fs-4" style="color: #E76A24;"></i>
+                </a>
+                <a href="#" class="me-5">
+                    <i class="bi bi-instagram fs-4" style="color: #E76A24;"></i>
+                </a>
+                <a href="#">
+                    <i class="bi bi-linkedin fs-4" style="color: #E76A24;"></i>
+                </a>
+            </div> -->
+        </div>
+
+        <!-- Empty Column for Spacing -->
+        <div class="col-md-5"></div>
+    </div>
+</div>
+
+
+
+<section class="join-text text-center bg-light">
+  <div class="container animate-on-scroll">
+      <h2 class="">Global presence across eight strategic markets, and growing
+      </h2>
+      <p class="lead text-muted mt-3">
+        With expert proficiency in training new employees, our champions, spread across eight strategic markets, provide affordable customer service to 6.3 billion customers.        
+      </p>
+  </div>
+</section>
+
+
+<section class="py-5 bg-light">
+    <div class="container animate-on-scroll">
+        <div class="row g-4">
+            <!-- Column 1 -->
+            <div class="col-md-4 d-flex flex-column gap-4">
+              <a href="career.html#career" class="location-card">
+                  <img src="https://weareeverise.com/wp-content/uploads/2023/02/Guatemala-new-2.jpeg" alt="California">
+                  <div class="overlay">California</div>
+              </a>
+                <a href="career.html#career" class="location-card">
+                    <img src="https://imgs.search.brave.com/YlMIgSH480QMaHoZ_FHuax0DpIV0cb1Wx48Oelry3nY/rs:fit:500:0:0:0/g:ce/aHR0cHM6Ly93d3cu/cGxhbmV0d2FyZS5j/b20vd3BpbWFnZXMv/MjAxOS8xMi9mbG9y/aWRhLWluLXBpY3R1/cmVzLW1vc3QtYmVh/dXRpZnVsLXBsYWNl/cy10by12aXNpdC1i/YWhpYS1ob25kYS1z/dGF0ZS1wYXJrLmpw/Zw" alt="Florida">
+                    <div class="overlay">Florida</div>
+                </a>
+                <a href="career.html#career" class="location-card">
+                    <img src="https://weareeverise.com/wp-content/uploads/2023/02/Philippines-new.jpeg" alt="New York">
+                    <div class="overlay">New York</div>
+                </a>
+            </div>
+            <!-- Column 2 -->
+            <div class="col-md-4 d-flex flex-column gap-4">
+                <a href="career.html#career" class="location-card">
+                    <img src="https://imgs.search.brave.com/Y-crRpjED09rtarNWS5TvnvINhKrB8Jr-woUDpcAMPI/rs:fit:500:0:0:0/g:ce/aHR0cHM6Ly93d3cu/c3RhdGUuZ292L3dw/LWNvbnRlbnQvdXBs/b2Fkcy8yMDI0LzEw/L3NodXR0ZXJzdG9j/a18yNTA1NTEyMzI1/LXNjYWxlZC5qcGc" alt="Ohio">
+                    <div class="overlay">Ohio</div>
+                </a>
+                
+  
+                <a href="career.html#career" class="location-card">
+                  <img src="https://imgs.search.brave.com/d6ZJAyzyTtkpuFIMtGBJFn7ObEtactfnHVD11eKNLy4/rs:fit:500:0:0:0/g:ce/aHR0cHM6Ly9jZG4u/YnJpdGFubmljYS5j/b20vNDIvOTM4NDIt/MDUwLTI5NUQzMkEw/L1VTLUNhcGl0b2wt/cGxhY2UtbWVldGlu/Zy1Db25ncmVzcy1X/YXNoaW5ndG9uLURD/LmpwZz93PTIwMCZo/PTIwMCZjPWNyb3A" alt="Washington">
+                  <div class="overlay">Washington (state)</div>
+              </a>
+                
+            </div>
+            <!-- Column 3 -->
+            <div class="col-md-4 d-flex flex-column gap-4">
+                <a href="career.html#career" class="location-card">
+                    <img src="https://weareeverise.com/wp-content/uploads/2023/02/Geo_Backgrounds_03_IRE_1920x.jpeg" alt="Atlanta">
+                    <div class="overlay">Atlanta</div>
+                </a>
+                <a href="career.html#career" class="location-card">
+                    <img src="https://weareeverise.com/wp-content/uploads/2023/02/pexels-chris-s-15241143-scaled.jpeg" alt="Texas">
+                    <div class="overlay">Texas</div>
+                </a>
+                <a href="career.html#career" class="location-card">
+                    <img src="https://weareeverise.com/wp-content/uploads/2023/01/Geo-Backgrounds_02_SG.jpg" alt="Las Vegas">
+                    <div class="overlay">Las Vegas</div>
+                </a>
+                
+  
+                  <a href="career.html#career" class="location-card">
+                      <img src="https://weareeverise.com/wp-content/uploads/2023/02/Guatemala-new-2.jpeg" alt="New Jersey">
+                      <div class="overlay">
+                          New Jersey</div>
+                  </a>
+                
+            </div>
+        </div>
+    </div>
+  </section>
+
+<!-- footer -->
+
+
+   <!-- Footer -->
+   <footer class="footer bg-dark text-white py-5">
+    <div class="container animate-on-scroll">
+      <div class="row">
+        <!-- Social Media Icons -->
+        <!-- <div class="col-md-2 mb-4 mb-md-0">
+          <ul class="list-unstyled d-flex gap-3">
+            <li>
+              <a href="#" class="text-white">
+                <i class="bi bi-facebook fs-4"></i>
+              </a>
+            </li>
+            <li>
+              <a href="#" class="text-white">
+                <i class="bi bi-instagram fs-4"></i>
+              </a>
+            </li>
+            <li>
+              <a href="#" class="text-white">
+                <i class="bi bi-linkedin fs-4"></i>
+              </a>
+            </li>
+          </ul>
+        </div> -->
+  
+        <!-- Quick Links -->
+        <div class="col-md-5 mb-4 mb-md-0">
+          <h6 class="fw-bold">Career</h6>
+          <ul class="list-unstyled" style="line-height: 2;">
+            <li><a href="career.html" class="text-white-50 text-decoration-none">Software Engineer</a></li>
+            <li><a href="career.html" class="text-white-50 text-decoration-none">Project Manager</a></li>
+            <li><a href="career.html" class="text-white-50 text-decoration-none"></a>Web Designer</li>
+            <li><a href="career.html" class="text-white-50 text-decoration-none">Tech support</a></li>
+            <li><a href="career.html" class="text-white-50 text-decoration-none">Tech Agent</a></li>
+          </ul>
+        </div>
+  
+        
+  
+        <!-- Services -->
+        <div class="col-md-5 mb-4 mb-md-0">
+          <h6 class="fw-bold">Services</h6>
+          <ul class="list-unstyled" style="line-height: 2";>
+            <li><a href="service.html#workforce" class="text-white-50 text-decoration-none">Workforce Management</a></li>
+            <li><a href="service.html#quality-assurance" class="text-white-50 text-decoration-none">Quality Assurance</a></li>
+            <li><a href="service.html#system-insight" class="text-white-50 text-decoration-none">Systematic Insights</a></li>
+            <li><a href="service.html#recruitment-process" class="text-white-50 text-decoration-none">Recruitment Process Outsourcing</a></li>
+          </ul>
+        </div>
+  
+     
+  
+        
+        <div class="col-md-2">
+          <h6 class="fw-bold">Work From AnyWhere</h6>
+          <ul class="list-unstyled"style="line-height: 2;">
+            <li><a href="#" class="text-white-50 text-decoration-none">Remote</a></li>
+            <li><a href="workforus.html#locations" class="text-white-50 text-decoration-none">Locations</a></li>
+            <li><a href="workforus.html" class="text-white-50 text-decoration-none">Apply</a></li>
+          </ul>
+        </div>
+      </div>
+  
+      <div class="row mt-4">
+        <div class="col text-center">
+          <p class="mb-0">&copy; 2025 Everise. All Rights Reserved.</p>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+
+
+  <!-- Custom alert -->
+  <div class="alert-overlay" id="alert-overlay"></div>
+  <div class="custom-alert" id="custom-alert" role="alert" aria-live="assertive">
+    <p id="alert-message"></p>
+    <button onclick="closeAlert()">OK</button>
+  </div>
+
+
+<!-- Add Bootstrap Icons -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+  
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
+
+<script type="text/javascript"
+        src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
+</script>
+<script>
+
+  // email.js
+
+  emailjs.init("Heb8zPuKpxdrecWD9"); // Replace with your EmailJS user ID
+
+    document.getElementById("job-form").addEventListener("submit", function (event) {
+      event.preventDefault(); // Prevent the default form submission
+
+      // Collect form data
+      const formData = {
+        first_name: this.first_name.value,
+        last_name: this.last_name.value,
+        email: this.email.value,
+        specialization: this.specialization.value,
+        state: this.state.value,
+        remote_in_office: this.remote_in_office.value,
+        message:this.message.value
+      };
+
+      // Send form data using EmailJS
+      emailjs
+        .send("service_ozprzxe", "template_srn9trk", formData)
+        .then((response) => {
+          console.log("SUCCESS!", response.status, response.text);
+          showAlert("Your form has been submitted successfully!");
+          document.getElementById("job-form").reset(); // Reset the form
+        })
+        .catch((error) => {
+          console.error("FAILED...", error);
+          showAlert("There was an error submitting the form. Please try again.");
+        });
+    });
+
+    function showAlert(message) {
+      document.getElementById("alert-message").textContent = message;
+      document.getElementById("custom-alert").style.display = "block";
+      document.getElementById("alert-overlay").style.display = "block";
+      document.getElementById("custom-alert").querySelector("button").focus();
+    }
+
+    function closeAlert() {
+      document.getElementById("custom-alert").style.display = "none";
+      document.getElementById("alert-overlay").style.display = "none";
+    }
+
+
+
+    // animation
+
+  document.addEventListener("DOMContentLoaded", () => {
+    const elements = document.querySelectorAll(".animate-on-scroll");
+  
+    const handleScroll = () => {
+      elements.forEach((element) => {
+        const rect = element.getBoundingClientRect();
+        if (rect.top <= window.innerHeight && rect.bottom >= 0) {
+          element.classList.add("visible");
+        }
+      });
+    };
+  
+    // Initial check and adding scroll listener
+    window.addEventListener("scroll", handleScroll);
+    handleScroll(); // Trigger for elements already in view
+  });
+  
+  </script>
+  </body>
+
+</html>

@@ -1,0 +1,625 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Services Page</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
+  <style>
+  html{
+    scroll-behavior: smooth;
+  }
+    body{
+      font-family: "Playfair Display", serif;
+    }
+    .navbar {
+      background-color: #d1d1d1;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 1000;
+      /* height: 100px; Increased height */
+    display: flex;
+    align-items: center;
+    }
+
+    .navbar-nav .nav-link {
+      color: #000;
+    }
+
+    .navbar-nav .nav-link:hover {
+      color: #E76A24;
+    }
+
+    .navbar .btn-contact {
+      background-color: #E76A24;
+      color: #fff;
+      font-weight: 500;
+      font-size: 1.2em;
+    }
+
+
+    .navbar a{
+      font-weight: 500;
+      font-size: 1.2em;
+    }
+    /* services */
+
+    .animate-on-scroll {
+  opacity: 0;
+  transform: translateY(50px);
+  transition: opacity 0.4s ease-out, transform 0.4s ease-out;
+}
+
+.animate-on-scroll.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+  
+.introduction {
+  position: relative;
+  background: url('https://weareeverise.com/wp-content/uploads/2023/09/Image-Service-Banner-1.jpg');
+  background-size: cover;
+  background-position: center; /* Centers the image */
+  background-repeat: no-repeat; 
+  color: white;
+  height: 800px; 
+  border-radius: 5px;
+  padding: 0 10em;
+}
+
+.introduction::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5); /* Semi-transparent overlay */
+  z-index: 1;
+}
+
+.introduction .overlay {
+  position: relative;
+  z-index: 2;
+}
+
+.introduction h2 {
+  font-size: 3rem;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.introduction p {
+  font-size: 1.25rem;
+  line-height: 1.6;
+  color: #fff;
+  font-weight: 800;
+  /* padding: 0 10em; */
+}
+
+
+
+    /*  */
+
+    
+
+    /* Highlight Card */
+    .service-card{
+     padding-top: 10em;
+     
+    }
+
+
+    .highlight-card {
+      margin-bottom: 10em; 
+      align-items: center;
+      gap: 6em;
+    }
+
+    .highlight-card img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 10px;
+    }
+
+    .service-card .service-text{
+      line-height: 2;
+    }
+
+    .highlight-card h4 {
+      color: #000;
+      font-weight: 400;
+      font-size: 3.2rem;
+    }
+    .highlight-card a{
+
+      background-color: #E76A24;
+      color: #fff;
+    }
+
+    /* FORM */
+    
+    .form-container {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+      background-color: #f8f9fa;
+      padding: 2rem;
+      
+  
+    }
+
+    #contact-form{
+
+      width: 100%;
+      /* max-width: 1000px; */
+    }
+    .form-control, .form-select {
+      max-width: 600px;/* Set a specific max-width */
+    width: 100%; /* Make sure it adjusts to smaller screens */
+    margin: 0 auto;
+    box-shadow: 0 1px 3px #E76A24
+    }
+    .form-select {
+      /* max-width: 800px; */
+      margin: 0 auto;
+    }
+
+    #submit-button{
+      background-color: #E76A24;
+      color: #fff;
+      max-width: 400px;/* Set a specific max-width */
+    width: 100%;
+    }
+    /* Custom alert styles */
+  .custom-alert {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    z-index: 1000;
+    animation: fadeIn 0.3s ease-in-out;
+  }
+
+  .custom-alert p {
+    margin-bottom: 20px;
+  }
+
+  .custom-alert button {
+    background-color: blue;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+  }
+
+  .custom-alert button:hover {
+    background-color: darkblue;
+  }
+
+  /* Overlay for alert */
+  .alert-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 999;
+    animation: fadeIn 0.3s ease-in-out;
+  }
+
+  /* Animations */
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+    .footer {
+      background-color: #222;
+      color: white;
+      padding: 20px 0;
+    }
+
+    .footer a {
+      color: #999;
+      text-decoration: none;
+    }
+
+    .footer a:hover {
+      color: #fff;
+    }
+
+    @media (max-width: 880px) {
+      .introduction h2 {
+    
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+.introduction p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  /* padding: 0 10em; */
+}
+    }
+
+
+
+    @media (max-width:577px) {
+      .introduction {
+    padding-left: 5px;
+    padding-right: 5px;
+  
+}
+
+.introduction h2 {
+    
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 10px;
+  }
+
+.introduction p {
+  font-size: 1.2rem;
+  line-height: 1.3;
+  
+ 
+}
+
+
+    }
+
+@media(max-width:430px){
+.service-card h4{
+  font-size: 2em ;
+}
+}
+
+  </style>
+</head>
+
+<body>
+
+  <!-- Navbar Section -->
+  <nav class="navbar navbar-expand-lg navbar-light py-4">
+    <div class="container">
+      <a class="navbar-brand" href="#">
+        <img src="https://weareeverise.com/wp-content/uploads/2022/10/Logo.png" alt="Logo" style="max-height: 40px;">
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto px-5">
+          <li class="nav-item">
+            <a class="nav-link" href="index.html">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="service.html">Services</a>
+          </li>
+          
+          <li class="nav-item">
+            <a class="nav-link" href="workforus.html">Work for Us</a>
+          </li>
+        </ul>
+        <a href="career.html" class="btn btn-contact ms-3">Apply</a>
+      </div>
+    </div>
+  </nav>
+  
+
+  <!-- Header Section -->
+ 
+  <!-- Introduction Section -->
+  <section class="introduction">
+    <div class="container h-100 d-flex justify-content-center align-items-center animate-on-scroll">
+      <div class="text-center">
+        <h2>Pathways to Operational Brilliance and Service Excellence</h2>
+        <p>
+          At Everise, we are dedicated to redefining customer experiences and operational efficiency. Our comprehensive range of services is designed to cater to diverse industries, offering innovative solutions to complex challenges. Explore how we empower businesses to scale and thrive in a dynamic market landscape.
+        </p>
+      </div>
+    </div>
+  </section>
+  
+
+  <!-- Cards Section -->
+  <section class="container mt-5 service-card animate-on-scroll">
+    <!-- Highlight Card Row 1 -->
+    <div class="row highlight-card">
+      <div class="col-md-5">
+        <img src="https://weareeverise.com/wp-content/uploads/2023/09/Image-Service-Section-WFM-1024x879.jpg" alt="Workforce Management">
+      </div>
+      <div class="col-md-5 service-text" id="workforce">
+        <h6>WORKFORCE MANAGEMENT</h6>
+        <h4>The Everise WFMaaS Advantage</h4>
+        <p>
+          Unlock the Future of Operational Excellence with Everise’s Workforce Management as a Service (WFMaaS)—your secret weapon for delivering unparalleled customer experiences while optimizing every facet of your operations. From precision staffing and laser-accurate forecasting to consultative insights, our suite of services is a game-changer in scalability and efficiency. With proven outcomes like $1.1M labor savings and 11% improved forecast accuracy, we’re not just another service provider; we’re your strategic partner in carving a streamlined, cost-effective path to your organization’s milestones and vision. Elevate your business with us.
+        </p>
+        <a href="service.html#service-target" class="btn">Learn More ></a>
+      </div>
+    </div>
+
+    <!-- Highlight Card Row 2 -->
+    <div class="row highlight-card
+    animate-on-scroll">
+      
+      <div class="col-md-5 service-text" id="quality-assurance">
+        <h6>QUALITY ASSURANCE</h6>
+        <h4>The Quality Assurance Revolution</h4>
+        <p>
+          Unlock Next-Level Customer Engagement with Everise’s AI-Powered Quality Assurance as a Service. We don’t just ensure quality; we redefine it. Dive into actionable insights with our pioneering CX Analysis, real-time Power BI Dashboards, and Six Sigma expertise. Our dedicated QA team transforms every customer interaction into a memorable moment, elevating brand loyalty and business outcomes. With advanced Sentiment Analytics and Machine Learning technologies, we decode the nuances of your customer experience, turning insights into revenue. Discover excellence defined; discover Everise.
+        </p>
+        <a href="service.html#service-target" class="btn">Learn More ></a>
+      </div>
+
+      <div class="col-md-5">
+        <img src="https://weareeverise.com/wp-content/uploads/2023/09/Image-Service-Section-QA-1-1024x879.jpg" alt="Quality Assurance">
+      </div>
+    </div>
+
+    <!-- Add additional highlight cards as needed -->
+
+
+        <!-- Highlight Card Row 3 -->
+        <div class="row highlight-card" id="system-insight animate-on-scroll">
+          <div class="col-md-5">
+            <img src="https://weareeverise.com/wp-content/uploads/2023/09/Image-Service-Section-SI.jpg" alt="Systematic Insights">
+          </div>
+          <div class="col-md-5 service-text">
+            <h6>SYSTEM INSIGHT</h6>
+            <h4>Unlock Your Business' Untapped Potential</h4>
+            <p>
+              Our Systematic Insights team offers a transformative experience that turns complex operational challenges and data analytics into a blueprint for growth and unparalleled customer satisfaction. With expertise in Six Sigma, Lean Sigma, and COPC certifications, we delve deep into your operational DNA to unearth cost-saving avenues and new horizons of customer delight and market leadership. Your partnership with Everise is not just a business move; it’s your roadmap to sustainable success in an ever-evolving market landscape. Learn how you can chart your course to greatness—today.
+            </p>
+            <a href="service.html#service-target" class="btn">Learn More ></a>
+          </div>
+        </div>
+    
+        <!-- Highlight Card Row 4 -->
+        <div class="row highlight-card animate-on-scroll" id="recruitment-process">
+          
+          <div class="col-md-5 service-text">
+<h6>RECRUITMENT PROCESS OUTSOURCING</h6>
+            <h4>Transformational Talent Acquisition</h4>
+            <p>
+              Everise’s Recruitment Process Outsourcing (RPO) services are designed to revolutionize your talent acquisition strategy. Our adaptable services cater to your unique needs, matching the pace of today’s dynamic business environment. We guarantee an efficient hiring process that provides top-notch candidate experiences and uses cutting-edge technology for streamlined recruitment. Our process combines human expertise and automation for a seamless recruitment strategy that spans various industries. Our RPO services include Staff Augmentation, Comprehensive RPO Solutions, and Consulting Engagements, all structured to deliver real benefits like proficiency in high-volume hiring, dynamic adaptability, process improvements, and global staffing strategies.
+            </p>
+            <a href="service.html#service-target" class="btn">Learn More ></a>
+          </div>
+
+          <div class="col-md-5">
+            <img src="https://weareeverise.com/wp-content/uploads/2023/10/Image-Service-RPO-1024x879.jpg" alt="Recruitment Process Outsourcing">
+          </div>
+        </div>
+
+
+  
+
+  </section>
+
+         <!-- <div class="container input-container"> -->
+  <div class="form-container text-center animate-on-scroll" id="service-target">
+    <h1 class="h1 mb-3">Interested In Our Services?</h1>
+    <p class="h5 mb-4">You are a step away from Getting The Best Solutions</p>
+    <form id="contact-form">
+      <div class="mb-3">
+        <input type="text" class="form-control " name="first_name" placeholder="First Name" required>
+      </div>
+      <div class="mb-3">
+        <input type="text" class="form-control" name="last_name" placeholder="Last Name" required>
+      </div>
+      <div class="mb-3">
+        <input type="email" class="form-control" name="email" placeholder="Email" required>
+      </div>
+
+      <!-- <div class="mb-3">
+        <input type="tel" class="form-control" name="phone" placeholder="Phone" required>
+      </div> -->
+
+      <div class="mb-3">
+        <input type="text" class="form-control" name="address" placeholder="Address" required>
+      </div>
+      
+
+      <div class="mb-3">
+        <label for="message" class="form-label">What Service Do You Need<span class="text-danger">*</span></label>
+        <textarea class="form-control" name="message" id="message" rows="4" required></textarea>
+    </div>
+      <button type="submit" class="btn" id="submit-button">Submit</button>
+    </form>
+  </div>
+
+  <!-- Custom alert -->
+  <div class="alert-overlay" id="alert-overlay"></div>
+  <div class="custom-alert" id="custom-alert" role="alert" aria-live="assertive">
+    <p id="alert-message"></p>
+    <button class="btn btn-secondary" onclick="closeAlert()">OK</button>
+  </div>
+
+  <!-- </div> -->
+
+  
+   <!-- Footer -->
+   <footer class="footer bg-dark text-white py-5">
+    <div class="container animate-on-scroll">
+      <div class="row">
+        <!-- Social Media Icons -->
+        <!-- <div class="col-md-2 mb-4 mb-md-0">
+          <ul class="list-unstyled d-flex gap-3">
+            <li>
+              <a href="#" class="text-white">
+                <i class="bi bi-facebook fs-4"></i>
+              </a>
+            </li>
+            <li>
+              <a href="#" class="text-white">
+                <i class="bi bi-instagram fs-4"></i>
+              </a>
+            </li>
+            <li>
+              <a href="#" class="text-white">
+                <i class="bi bi-linkedin fs-4"></i>
+              </a>
+            </li>
+          </ul>
+        </div> -->
+  
+        <!-- Quick Links -->
+        <div class="col-md-5 mb-4 mb-md-0">
+          <h6 class="fw-bold">Career</h6>
+          <ul class="list-unstyled" style="line-height: 2;">
+            <li><a href="career.html" class="text-white-50 text-decoration-none">Software Engineer</a></li>
+            <li><a href="career.html" class="text-white-50 text-decoration-none">Project Manager</a></li>
+            <li><a href="career.html" class="text-white-50 text-decoration-none"></a>Web Designer</li>
+            <li><a href="career.html" class="text-white-50 text-decoration-none">Tech support</a></li>
+            <li><a href="career.html" class="text-white-50 text-decoration-none">Tech Agent</a></li>
+          </ul>
+        </div>
+  
+        
+  
+        <!-- Services -->
+        <div class="col-md-5 mb-4 mb-md-0">
+          <h6 class="fw-bold">Services</h6>
+          <ul class="list-unstyled" style="line-height: 2";>
+            <li><a href="service.html#workforce" class="text-white-50 text-decoration-none">Workforce Management</a></li>
+            <li><a href="service.html#quality-assurance" class="text-white-50 text-decoration-none">Quality Assurance</a></li>
+            <li><a href="service.html#system-insight" class="text-white-50 text-decoration-none">Systematic Insights</a></li>
+            <li><a href="service.html#recruitment-process" class="text-white-50 text-decoration-none">Recruitment Process Outsourcing</a></li>
+          </ul>
+        </div>
+  
+     
+  
+        
+        <div class="col-md-2">
+          <h6 class="fw-bold">Work From AnyWhere</h6>
+          <ul class="list-unstyled"style="line-height: 2;">
+            <li><a href="#" class="text-white-50 text-decoration-none">Remote</a></li>
+            <li><a href="workforus.html#locations" class="text-white-50 text-decoration-none">Locations</a></li>
+            <li><a href="workforus.html" class="text-white-50 text-decoration-none">Apply</a></li>
+          </ul>
+        </div>
+      </div>
+  
+      <div class="row mt-4">
+        <div class="col text-center">
+          <p class="mb-0">&copy; 2025 Everise. All Rights Reserved.</p>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+
+  <!-- Custom alert -->
+  <div class="alert-overlay" id="alert-overlay"></div>
+  <div class="custom-alert" id="custom-alert" role="alert" aria-live="assertive">
+    <p id="alert-message">Congratulation on taking the first to your dream job</p>
+    <button onclick="closeAlert()">OK</button>
+  </div>
+
+  
+  <!-- Add Bootstrap Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+  
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
+  <script type="text/javascript"
+  src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
+</script>
+
+<script>
+
+emailjs.init("Heb8zPuKpxdrecWD9"); // Replace with your EmailJS user ID
+
+document.getElementById("contact-form").addEventListener("submit", function (event) {
+      event.preventDefault(); // Prevent the default form submission
+
+      // Collect form data
+      const formData = {
+        first_name: this.first_name.value,
+        last_name: this.last_name.value,
+        email: this.email.value,
+        // phone: this.phone.value,
+        address: this.address.value,
+        // employment_type: this.employment_type.value
+        message:this.message.value
+      };
+
+      // Send form data using EmailJS
+      emailjs
+        .send("service_i20xad6", "template_0asr0dr", formData)
+        .then((response) => {
+          console.log("SUCCESS!", response.status, response.text);
+          showAlert("Your form has been submitted successfully!");
+          document.getElementById("contact-form").reset(); // Reset the form
+        })
+        .catch((error) => {
+          console.error("FAILED...", error);
+          showAlert("There was an error submitting the form. Please try again.");
+        });
+    });
+
+    function showAlert(message) {
+      document.getElementById("alert-message").textContent = message;
+      document.getElementById("custom-alert").style.display = "block";
+      document.getElementById("alert-overlay").style.display = "block";
+      document.getElementById("custom-alert").querySelector("button").focus();
+    }
+
+    function closeAlert() {
+      document.getElementById("custom-alert").style.display = "none";
+      document.getElementById("alert-overlay").style.display = "none";
+    }
+
+
+document.addEventListener("DOMContentLoaded", () => {
+  const elements = document.querySelectorAll(".animate-on-scroll");
+
+  const handleScroll = () => {
+    elements.forEach((element) => {
+      const rect = element.getBoundingClientRect();
+      if (rect.top <= window.innerHeight && rect.bottom >= 0) {
+        element.classList.add("visible");
+      }
+    });
+  };
+
+  // Initial check and adding scroll listener
+  window.addEventListener("scroll", handleScroll);
+  handleScroll(); // Trigger for elements already in view
+});
+
+
+
+
+
+
+</script>
+</body>
+</html>

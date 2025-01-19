@@ -1,0 +1,365 @@
+!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title> Career Page</title>
+  <!-- <link rel="shortcut icon" href="img/Logo.ico"/> -->
+ 
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+
+  
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
+  <style>
+
+html {
+  scroll-behavior: smooth;
+}
+
+    body{
+        font-family: "Playfair Display", serif;
+        line-height: 1.3;
+        word-spacing: 2px;
+        
+    }
+
+     
+ 
+    .animate-on-scroll {
+  opacity: 0;
+  transform: translateY(50px);
+  transition: opacity 0.4s ease-out, transform 0.4s ease-out;
+}
+
+.animate-on-scroll.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+ 
+    .navbar {
+      background-color: #d1d1d1;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 1000;
+      /* height: 100px; Increased height */
+    display: flex;
+    align-items: center;
+    }
+
+    .navbar-nav .nav-link {
+      color: #000;
+    }
+
+    .navbar-nav .nav-link:hover {
+      color: #E76A24;
+      
+    }
+
+    .navbar .btn-contact {
+      background-color: #E76A24;
+      color: #fff;
+      font-weight: 500;
+      font-size: 1.2em;
+    } 
+
+    .navbar a{
+      font-weight: 600;
+      font-size: 1.2em;
+    }
+
+    #career{
+        padding-top: 5em;
+    }
+
+
+    .card {
+  border-radius: 15px;
+}
+
+.card img {
+  position: relative;
+  margin-top: -50px;
+}
+
+.btn {
+  border-radius: 8px;
+  font-size: 16px;
+}
+
+
+    .mobile{
+        display: none;
+    }
+
+  
+ 
+
+@media screen and (max-width: 768px) {
+  .mobile {
+    display: block;
+  }
+  .laptop{
+      display: none;
+      
+      
+    }
+}
+
+</style>
+
+</head>
+    <body>
+
+      <nav class="navbar navbar-expand-lg navbar-light py-4">
+        <div class="container">
+          <a class="navbar-brand" href="#">
+            <img src="https://weareeverise.com/wp-content/uploads/2022/10/Logo.png" alt="Logo" style="max-height: 40px;">
+          </a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto px-5">
+              <li class="nav-item">
+                <a class="nav-link" href="index.html">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="service.html">Services</a>
+              </li>
+              
+              <li class="nav-item">
+                <a class="nav-link" href="workforus.html">Work for Us</a>
+              </li>
+            </ul>
+            <a href="career.html" class="btn btn-contact ms-3">Career</a>
+          </div>
+        </div>
+      </nav>
+      
+
+          
+<!-- laptop -->
+          <div class="container mt-5 px-5 py-5 laptop" id="career">
+            <div class="text-center mb-4">
+              <h2 class="mb-4" style="font-size: 3em;font-weight: 600;">Career Opportunities</h2>
+              <p class="lead mb-5" style="font-weight: 500;">What type of Career are you looking for?</p>
+            </div>
+            <div class="row justify-content-center">
+        
+              <div class="card border-0 shadow h-100 text-center animate-on-scroll" style="max-width: 400px; margin: auto; border-radius: 15px;">
+                <div class="card-body p-5" style="border: 4px solid #ffa726; border-radius: 15px;">
+                  <div class="position-relative" style="margin-top: -50px;">
+                    <img src="https://weareeverise.com/wp-content/uploads/2024/10/Careers-Hero-Customer-Experience-Responsive.png" alt="Contact Center Agent" class="rounded-circle" style="width: 100px; height: 100px; border: 4px solid white;">
+                  </div>
+                  <h5 class="mt-3 fw-bold">Contact Center Agent</h5>
+                  <p class="text-muted">Offer voice, chat, or email support to customers and build a fulfilling career in:</p>
+                  <ul class="text-start mx-auto" style="max-width: 250px;line-height: 1.5">
+                    <li>Customer Service</li>
+                    <li>Healthcare Customer Service</li>
+                    <li>Technical Support</li>
+                    <li>Licensed Property and Casualty</li>
+                    <li>Licensed Health Insurance</li>
+                  </ul>
+                  <a href="contact.html#application-form" class="btn btn-warning btn-block mt-3 text-white" style="font-weight: bold; background-color: #E76A24; padding: 0.7em 7em; border: none;">APPLY</a>
+                </div>
+              </div>
+              
+              
+              <div class="card border-0 shadow h-100 text-center animate-on-scroll" style="max-width: 400px; margin: auto; border-radius: 15px;">
+                <div class="card-body p-5" style="border: 4px solid #0288d1; border-radius: 15px;">
+                  <div class="position-relative" style="margin-top: -50px;">
+                    <img src="https://weareeverise.com/wp-content/uploads/2024/10/Careers-Hero-Corporate-Responsive.png" alt="Contact Center Agent" class="rounded-circle" style="width: 100px; height: 100px; border: 4px solid white;">
+                  </div>
+                  <h5 class="mt-3 fw-bold">Corperate Position</h5>
+                  <p class="text-muted">Support our company operations and join our support teams:</p>
+                  <ul class="text-start mx-auto" style="max-width: 250px; line-height: 1.6;">
+                    <li>Operational Leadership</li>
+                    <li>Information Technology</li>
+                    <li>Finance</li>
+                    <li>Client Service</li>
+                    <li>Sales Executive Management</li>
+                  </ul>
+                  <a href="contact.html#application-form" class="btn btn-warning btn-block mt-3 text-white" style="font-weight:bold;background-color: #0288d1; padding: 0.7em 7em; border: none;">APPLY</a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+
+
+
+
+          <div class="container mt-5 pt-5 mobile" id="career">
+            <div class="text-center mb-4">
+              <h2 class="mb-3" style="font-weight: 600;">Career Opportunities</h2>
+              <p class="lead mb-5" style="font-size: 1em;">What type of Career are you looking for?</p>
+            </div>
+            <div class="row justify-content-center">
+              <!-- Contact Center Agent -->
+              <div class="col-12 mb-4 animate-on-scroll">
+                <div class="card border-0 shadow" style="background: linear-gradient(135deg, #ffa726, #f3b14f);">
+                  <div class="card-body">
+                    <div class="d-flex align-items-center">
+                      <img src="https://weareeverise.com/wp-content/uploads/2024/10/Careers-Hero-Customer-Experience-Responsive.png" alt="Contact Center Agent" class="rounded-circle me-3" style="width: 60px; height: 60px;">
+                      <h5 class="card-title mb-0 text-white">Contact Center Agent</h5>
+                    </div>
+                    <p class="card-text mt-3 text-white" style="font-weight: 500;">Offer voice, chat, or email support to customers and build a fulfilling career in:</p>
+                    <div class="d-flex align-items-start mt-2">
+                      <ul class="mb-0 me-3 text-white" style="line-height: 1.8;">
+                        <li><a href="contact.html#applicatio-form" class="text-decoration-none text-white">Customer Service</a></li>
+                        <li><a href="contact.html#applicatio-form" class="text-decoration-none text-white"> Cybersecurity Service</a></li>
+                        <li><a href="contact.html#applicatio-form" class="text-decoration-none text-white">Technical Support</a></li>
+                        <li><a href="contact.html#applicatio-form" class="text-decoration-none text-white">Licensed Property and Casualty</a></li>
+                        <li><a href="contact.html#applicatio-form" class="text-decoration-none text-white">Licensed Health Insurance</a></li>
+                      </ul>
+                      <a href="contact.html#applicatio-form" class="btn btn-link fs-5 fw-bold text-white mt-5"><i class="bi bi-caret-right-fill"></i></a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- Corporate Positions -->
+              <div class="col-12 mb-4 mt-5 animate-on-scroll">
+                <div class="card border-0 shadow" style="background: linear-gradient(135deg, #0288d1, #66bce4);">
+                  <div class="card-body">
+                    <div class="d-flex align-items-center">
+                      <img src="https://weareeverise.com/wp-content/uploads/2024/10/Careers-Hero-Corporate-Responsive.png" alt="Corporate Positions" class="rounded-circle me-3" style="width: 60px; height: 60px;">
+                      <h5 class="card-title mb-0 text-white">Corporate Positions</h5>
+                    </div>
+                    <p class="card-text mt-3 text-white"style="font-weight: 500;">Support our company operations and join our support teams:</p>
+                    <div class="d-flex align-items-start mt-2">
+                      <ul class="mb-0 me-3 text-white" style="line-height: 1.8;">
+                        <li><a href="contact.html#applicatio-form" class="text-decoration-none text-white">Operations Leadership</a></li>
+                        <li><a href="contact.html#applicatio-form" class="text-decoration-none text-white">Information Technology</a></li>
+                        <li><a href="contact.html#applicatio-form" class="text-decoration-none text-white">Finance</a></li>
+                        <li><a href="contact.html#applicatio-form" class="text-decoration-none text-white">Client Services</a></li>
+                        <li><a href="contact.html#applicatio-form" class="text-decoration-none text-white">Sales Executive Management</a></li>
+                      </ul>
+                      <a href="contact.html#applicatio-form" class="btn btn-link fs-5 text-white mt-5"><i class="bi bi-caret-right-fill"></i></a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          
+
+
+
+   <!-- Footer -->
+   <footer class="footer bg-dark text-white py-5">
+    <div class="container animate-on-scroll">
+      <div class="row">
+        <!-- Social Media Icons -->
+        <!-- <div class="col-md-2 mb-4 mb-md-0">
+          <ul class="list-unstyled d-flex gap-3">
+            <li>
+              <a href="#" class="text-white">
+                <i class="bi bi-facebook fs-4"></i>
+              </a>
+            </li>
+            <li>
+              <a href="#" class="text-white">
+                <i class="bi bi-instagram fs-4"></i>
+              </a>
+            </li>
+            <li>
+              <a href="#" class="text-white">
+                <i class="bi bi-linkedin fs-4"></i>
+              </a>
+            </li>
+          </ul>
+        </div> -->
+  
+        <!-- Quick Links -->
+        <div class="col-md-5 mb-4 mb-md-0">
+          <h6 class="fw-bold">Career</h6>
+          <ul class="list-unstyled" style="line-height: 2;">
+            <li><a href="career.html" class="text-white-50 text-decoration-none">Software Engineer</a></li>
+            <li><a href="career.html" class="text-white-50 text-decoration-none">Project Manager</a></li>
+            <li><a href="career.html" class="text-white-50 text-decoration-none"></a>Web Designer</li>
+            <li><a href="career.html" class="text-white-50 text-decoration-none">Tech support</a></li>
+            <li><a href="career.html" class="text-white-50 text-decoration-none">Tech Agent</a></li>
+          </ul>
+        </div>
+  
+        
+  
+        <!-- Services -->
+        <div class="col-md-5 mb-4 mb-md-0">
+          <h6 class="fw-bold">Services</h6>
+          <ul class="list-unstyled" style="line-height: 2";>
+            <li><a href="service.html#workforce" class="text-white-50 text-decoration-none">Workforce Management</a></li>
+            <li><a href="service.html#quality-assurance" class="text-white-50 text-decoration-none">Quality Assurance</a></li>
+            <li><a href="service.html#system-insight" class="text-white-50 text-decoration-none">Systematic Insights</a></li>
+            <li><a href="service.html#recruitment-process" class="text-white-50 text-decoration-none">Recruitment Process Outsourcing</a></li>
+          </ul>
+        </div>
+  
+     
+  
+        
+        <div class="col-md-2">
+          <h6 class="fw-bold">Work From AnyWhere</h6>
+          <ul class="list-unstyled"style="line-height: 2;">
+            <li><a href="#" class="text-white-50 text-decoration-none">Remote</a></li>
+            <li><a href="workforus.html#locations" class="text-white-50 text-decoration-none">Locations</a></li>
+            <li><a href="workforus.html" class="text-white-50 text-decoration-none">Apply</a></li>
+          </ul>
+        </div>
+      </div>
+  
+      <div class="row mt-4">
+        <div class="col text-center">
+          <p class="mb-0">&copy; 2025 Everise. All Rights Reserved.</p>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+
+      <div class="row mt-4">
+        <div class="col text-center">
+          <p class="mb-0">&copy; 2025 Everise. All Rights Reserved.</p>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+
+
+          
+
+          <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
+
+    </body>
+
+    <script>
+
+      document.addEventListener("DOMContentLoaded", () => {
+        const elements = document.querySelectorAll(".animate-on-scroll");
+      
+        const handleScroll = () => {
+          elements.forEach((element) => {
+            const rect = element.getBoundingClientRect();
+            if (rect.top <= window.innerHeight && rect.bottom >= 0) {
+              element.classList.add("visible");
+            }
+          });
+        };
+      
+        // Initial check and adding scroll listener
+        window.addEventListener("scroll", handleScroll);
+        handleScroll(); // Trigger for elements already in view
+      });
+      
+      </script>
+    </html>

@@ -1,0 +1,568 @@
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title> Home Page</title>
+  <!-- <link rel="shortcut icon" href="img/Logo.ico"/> -->
+ 
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+
+  
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
+  <style>
+
+html {
+  scroll-behavior: smooth;
+}
+
+    body{
+        font-family: "Playfair Display", serif;
+        line-height: 1.3;
+        word-spacing: 2px;
+        
+    }
+
+    /* styles.css */
+
+.animate-on-scroll {
+  opacity: 0;
+  transform: translateY(50px);
+  transition: opacity 0.4s ease-out, transform 0.4s ease-out;
+}
+
+.animate-on-scroll.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+    .modal-dialog.custom-modal-dimensions {
+    max-width: 700px; /* Adjust width as needed */
+    max-height: 500px; /* Adjust height as needed */
+  }
+
+  /* Increase card height and center content */
+  .custom-card-height {
+    min-height: 300px; /* Set card height */
+  }
+
+  /* Add spacing for smaller screens */
+  @media (max-width: 767px) {
+    .modal-body .row > div {
+      margin-bottom: 10px;
+    }
+  }
+
+ 
+    .navbar {
+      background-color: #d1d1d1;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 1000;
+      /* height: 100px; Increased height */
+    display: flex;
+    align-items: center;
+    }
+
+    .navbar-nav .nav-link {
+      color: #000;
+    }
+
+    .navbar-nav .nav-link:hover {
+      color: #E76A24;
+      
+    }
+
+    .navbar .btn-contact {
+      background-color: #E76A24;
+      color: #fff;
+      font-weight: 500;
+      font-size: 1.2em;
+    } 
+
+    .navbar a{
+      font-weight: 500;
+      font-size: 1.2em;
+    }
+
+
+    .hero-section {
+      background-color: #fff;
+      position: relative;
+      overflow: hidden;
+      padding: 6rem 2rem;
+    }
+    .hero-content {
+      max-width: 700px;
+    }
+    .hero-title {
+      font-size: 5rem;
+      font-weight: 700;
+      margin-bottom: 0.5em;
+    }
+
+    .hero-content p{
+      font-size: 1.2em;
+    }
+    .highlight {
+      color: #ff6600;
+    }
+    .hero-image img {
+      max-width: 100%;
+      border-radius: 10px;
+    }
+   
+    .scroll-indicator {
+      margin-top: 1rem;
+      font-size: 0.9rem;
+      color: gray;
+    }
+
+    .stats-section{
+    font-size: 1.1em;
+    font-weight: 800;
+    padding-top: 13em;
+    padding-bottom: 5em;
+}
+
+.partnership-section{
+    padding: 10em 0;
+}
+
+.champions-section{
+  padding-top: 10em;
+}
+.testimonials-section{
+  padding: 10em 0;
+}
+
+.testimonials-section h2{
+  margin-bottom: 5em;
+}
+
+    .testimonial:hover {
+      transform: translateY(-100px); /* Slide up */
+      background-color: rgba(255, 255, 255, 1); /* Clearer color */
+      box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2); /* Enhanced shadow */
+    }
+
+    .connect-section {
+      background: linear-gradient(to right, #4e8ccf, #7562b7);
+      color: white;
+      padding: 100px 0;
+    }
+    .connect-section h1 {
+      font-size: 3rem;
+      font-weight: bold;
+      margin-bottom: 20px;
+    }
+     .connect-section p {
+      font-size: 1.3rem;
+      line-height: 1.8;
+      margin-bottom: 15px;
+      
+    } 
+
+    .connect-section a:hover{
+     background-color:#4e8ccf;
+     color: #fff;
+    }
+
+
+
+  
+    .footer {
+      background-color: #222;
+      color: white;
+      padding: 20px 0;
+    }
+
+    .footer a {
+      color: #999;
+      text-decoration: none;
+    }
+
+    .footer a:hover {
+      color: #fff;
+    }
+
+
+    @media(max-width: 500px){
+    .hero-title {
+      font-size:3rem;
+      
+      
+    }
+    .partnership-section h2{
+      margin-bottom: 1em;
+      font-size: 1.5em;
+      line-height: 1.2;
+    }
+  
+    .partnership-section p{
+    
+      font-size: 1.1em;
+      line-height: 1.3;
+    }
+     .connect-section p {
+      font-size: 1.1rem;
+      /* line-height: 1.8; */
+      /* margin-bottom: 15px; */
+      
+    } 
+
+    .champions-section p{
+      font-size: 1.1em;
+    }
+  }
+</style>
+    <body>
+
+
+      
+    
+      <!-- Bootstrap Modal -->
+      <div class="modal fade" id="helpModal" tabindex="-1" aria-labelledby="helpModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+          <div class="modal-content">
+            <div class="modal-body">
+              <!-- Bootstrap Card -->
+              <div class="card text-center">
+                <div class="card-body">
+                  <h5 class="card-title mb-5" style="font-weight: 800;">How Can We Help You?</h5>
+                  
+                  <div class="d-grid gap-3">
+                    <a href="service.html#service-target" class="btn" style="background-color: #b44d29; color: #fff; font-weight: 600;">Optimize my customer service</a>
+                    <a href="contact.html#application-form" class="btn" style="background-color: #fff; color: #b44d29; font-weight: 600; border:2px solid #b44d29;">I'm looking for jobs</a>
+
+                    <a href="index.html" data-bs-dismiss="modal" class="btn" style="background-color: #b44d29; color: #fff; font-weight: 600;">Just Looking Around</a>
+                   
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+<!-- Navbar Section -->
+<nav class="navbar navbar-expand-lg navbar-light py-4">
+  <div class="container">
+    <a class="navbar-brand" href="#">
+      <img src="https://weareeverise.com/wp-content/uploads/2022/10/Logo.png" alt="Logo" style="max-height: 40px;">
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ms-auto px-5">
+        <li class="nav-item">
+          <a class="nav-link" href="index.html">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="service.html">Services</a>
+        </li>
+        
+        <li class="nav-item">
+          <a class="nav-link" href="workforus.html">Work for Us</a>
+        </li>
+      </ul>
+      <a href="career.html" class="btn btn-contact ms-3">Career</a>
+    </div>
+  </div>
+</nav>
+
+<section class="hero-section d-flex align-items-center">
+    <div class="container animate-on-scroll">
+      <div class="row align-items-center">
+        <div class="col-md-6 hero-content">
+          <h1 class="hero-title">
+            Champions of <span class="highlight">Customer Happiness</span>
+          </h1>
+          <p>Everise delivers happiness to millions of customers globally. We excel at solving customer problems on behalf of some of the world’s biggest brands.</p>
+          
+        </div>
+        <div class="col-md-6 hero-image text-end">
+          <img src="https://weareeverise.com/wp-content/uploads/2023/02/home_hero_v3.png" alt="Happy Customer">
+        </div>
+      
+  </section>
+
+  <section class="stats-section text-center" style="background: linear-gradient(135deg, #6a5acd, #836fff); color: white;">
+    <div class="container animate-on-scroll">
+      <div class="row">
+        <div class="col-md-2">
+          <h1 class="display-4" id="count-200m">1M</h1>
+          <p>Customer Experiences Handled Annually</p>
+        </div>
+        <div class="col-md-2">
+          <h1 class="display-4" id="count-20k">1K</h1>
+          <p>Champions Strong</p>
+        </div>
+        <div class="col-md-2">
+          <h1 class="display-4" id="count-32">1</h1>
+          <p>Languages Supported</p>
+        </div>
+        <div class="col-md-2">
+          <h1 class="display-4" id="count-7">1</h1>
+          <p>Strategic Markets</p>
+        </div>
+        <div class="col-md-2">
+          <h1 class="display-4" id="count-70k">1K</h1>
+          <p>Average Net Promoter Scores</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  
+  <section class="partnership-section text-center" style="background-color: #d3d3d3; color: black;">
+    <div class="container animate-on-scroll">
+      <div class="row align-items-center">
+        <div class="col-lg-6 text-lg-start">
+          <h2 class="display-5 fw-bold">
+            We Believe In Building 
+            <span style="color: #b44d29;">True Partnerships That Help Businesses Thrive</span>
+          </h2>
+        </div>
+        <div class="col-lg-6">
+          <p class="lead">
+            We partner with organizations in specific verticals that require trained champions to help solve complex customer problems, reduce costs, engineer better business processes, and drive success.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  
+  <section class="champions-section text-center" style="background-color: #ffffff; color: black;">
+    <div class="container animate-on-scroll">
+      <div class="row justify-content-center">
+        <div class="col-lg-8">
+          <h2 class="fw-bold mb-4">Discover What Our Everise Champions Do</h2>
+          <p class="lead mb-4">
+            Our agents are known as “champions,” for their dedication, determination, and drive. 
+            They exceed customer expectations by ensuring happiness and striving for excellence. 
+            Our champions provide support at every step, delivering exceptional customer experiences 
+            that help you achieve your goals.
+          </p>
+          <a href="workforus.html" class="btn btn-orange btn-lg text-white px-4 py-2" style="background-color: #ff6600; font-weight: 700;">
+            WORK FOR US &nbsp; →
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  
+  <section class="testimonials-section text-center" style="background-color: #ffffff; color: black;">
+    <div class="container animate-on-scroll">
+      <h2 class="fw-bold">Here’s What Our Partners Say</h2>
+      <div class="row gy-4">
+        <div class="col-md-4">
+          <div class="testimonial p-5 shadow" style="background-color: rgba(0, 0, 0, 0.05); transition: all 0.3s ease;">
+            <p class="mb-4 " style="font-style: italic;">
+              "Everise is a preferred partner for us. They provide effective multi-lingual support across locations, 
+              which has tremendously improved member experience."
+            </p>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="testimonial p-5 shadow" style="background-color: rgba(0, 0, 0, 0.05); transition: all 0.3s ease;">
+            <p class="mb-4" style="font-style: italic;">
+              "Everise has among the lowest agent attrition levels and a well-trained team which allows them to 
+              have higher customer retention levels for us."
+            </p>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="testimonial p-5 shadow" style="background-color: rgba(0, 0, 0, 0.05); transition: all 0.3s ease;">
+            <p class="mb-4" style="font-style: italic;">
+              "Resolution rate is an important KPI for us, and Everise delivered above the target rate we gave them. 
+              They are an outstanding business partner!"
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <section class="connect-section">
+    <div class="container text-center  animate-on-scroll">
+      <h1>Let's Connect</h1>
+     <p> At Everise, we're always interested in hearing from you. Whether you have a question, concern or simply want to know more about what we do, we're here to help.
+      Our team is dedicated to providing you with the best possible experience, and we're committed to responding to all inquiries in a timely and professional manner. So don't hesitate to reach out to us today.</p>
+     <p>We look forward to hearing from you and helping you in any way we can.</p>
+
+     <div>
+      <a class="btn btn-lg px-5 py-2" style="background-color: #fff; color:#4e8ccf; font-weight: 600;" href="workforus.html#application-form">Connect</a>
+   </div>
+
+    </div>
+
+
+
+    
+  </section>
+    
+  
+   <!-- Footer -->
+   <footer class="footer bg-dark text-white py-5">
+    <div class="container animate-on-scroll">
+      <div class="row">
+        <!-- Social Media Icons -->
+        <!-- <div class="col-md-2 mb-4 mb-md-0">
+          <ul class="list-unstyled d-flex gap-3">
+            <li>
+              <a href="#" class="text-white">
+                <i class="bi bi-facebook fs-4"></i>
+              </a>
+            </li>
+            <li>
+              <a href="#" class="text-white">
+                <i class="bi bi-instagram fs-4"></i>
+              </a>
+            </li>
+            <li>
+              <a href="#" class="text-white">
+                <i class="bi bi-linkedin fs-4"></i>
+              </a>
+            </li>
+          </ul>
+        </div> -->
+  
+        <!-- Quick Links -->
+        <div class="col-md-5 mb-4 mb-md-0">
+          <h6 class="fw-bold">Career</h6>
+          <ul class="list-unstyled" style="line-height: 2;">
+            <li><a href="career.html" class="text-white-50 text-decoration-none">Software Engineer</a></li>
+            <li><a href="career.html" class="text-white-50 text-decoration-none">Project Manager</a></li>
+            <li><a href="career.html" class="text-white-50 text-decoration-none"></a>Web Designer</li>
+            <li><a href="career.html" class="text-white-50 text-decoration-none">Tech support</a></li>
+            <li><a href="career.html" class="text-white-50 text-decoration-none">Tech Agent</a></li>
+          </ul>
+        </div>
+  
+        
+  
+        <!-- Services -->
+        <div class="col-md-5 mb-4 mb-md-0">
+          <h6 class="fw-bold">Services</h6>
+          <ul class="list-unstyled" style="line-height: 2";>
+            <li><a href="service.html#workforce" class="text-white-50 text-decoration-none">Workforce Management</a></li>
+            <li><a href="service.html#quality-assurance" class="text-white-50 text-decoration-none">Quality Assurance</a></li>
+            <li><a href="service.html#system-insight" class="text-white-50 text-decoration-none">Systematic Insights</a></li>
+            <li><a href="service.html#recruitment-process" class="text-white-50 text-decoration-none">Recruitment Process Outsourcing</a></li>
+          </ul>
+        </div>
+  
+     
+  
+        
+        <div class="col-md-2">
+          <h6 class="fw-bold">Work From AnyWhere</h6>
+          <ul class="list-unstyled"style="line-height: 2;">
+            <li><a href="#" class="text-white-50 text-decoration-none">Remote</a></li>
+            <li><a href="workforus.html#locations" class="text-white-50 text-decoration-none">Locations</a></li>
+            <li><a href="workforus.html" class="text-white-50 text-decoration-none">Apply</a></li>
+          </ul>
+        </div>
+      </div>
+  
+      <div class="row mt-4">
+        <div class="col text-center">
+          <p class="mb-0">&copy; 2025 Everise. All Rights Reserved.</p>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
+
+<script>
+
+
+// script.js
+document.addEventListener("DOMContentLoaded", () => {
+  const elements = document.querySelectorAll(".animate-on-scroll");
+
+  const handleScroll = () => {
+    elements.forEach((element) => {
+      const rect = element.getBoundingClientRect();
+      if (rect.top <= window.innerHeight && rect.bottom >= 0) {
+        element.classList.add("visible");
+      }
+    });
+  };
+
+  // Initial check and adding scroll listener
+  window.addEventListener("scroll", handleScroll);
+  handleScroll(); // Trigger for elements already in view
+});
+
+
+
+
+
+
+    // Function to animate a number count
+
+function animateCount(elementId, start, end, duration, suffix = "") {
+  const element = document.getElementById(elementId);
+  const increment = Math.ceil((end - start) / (duration * 1000 / 60)); // Increment per frame (60fps)
+  let current = start;
+
+  const interval = setInterval(() => {
+    current += increment;
+    if (current >= end) {
+      current = end; // Ensure the final number is exactly the end value
+      clearInterval(interval);
+    }
+
+    // Format display value based on whether it's "M", "K", or just a number
+    if (suffix === "M") {
+      element.textContent = `${Math.floor(current / 1_000_000)}M`;
+    } else if (suffix === "K") {
+      element.textContent = `${Math.floor(current / 1_000)}K`;
+    } else {
+      element.textContent = current.toLocaleString(); // Default: formatted number
+    }
+  }, 1000 / 60); // Update every frame (60fps)
+}
+
+// Animate numbers
+document.addEventListener("DOMContentLoaded", () => {
+  animateCount("count-200m", 1_000_000, 200_000_000, 5, "M"); // 5 seconds
+  animateCount("count-20k", 1_000, 20_000, 4, "K"); // 4 seconds
+  animateCount("count-32", 1, 32, 3); // 3 seconds
+  animateCount("count-7", 1, 7, 2); // 2 seconds
+  animateCount("count-70k", 1_000, 70_000, 6, "K"); // 6 seconds
+});
+
+
+
+// Function to show the modal when the website loads
+document.addEventListener('DOMContentLoaded', function () {
+      const helpModal = new bootstrap.Modal(document.getElementById('helpModal'), {
+        backdrop: 'static', // Disable closing by clicking outside
+        keyboard: false     // Disable closing by pressing Esc
+      });
+      helpModal.show();
+    });
+
+</script>
+</body>
+
+</html>
+
+
+
