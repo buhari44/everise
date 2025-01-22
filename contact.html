@@ -284,7 +284,11 @@ html{
                         <input type="text" class="form-control" name="last_name" id="lastName" required>
                     </div>
                 </div>
-
+                <div class="row">
+                  <div class="col-md-6 mb-3">
+                      <label for="Phone number" class="form-label">Phone Number<span class="text-danger">*</span></label>
+                      <input type="tel" class="form-control" name="phone" pattern="[0-9]+" id="phone" required>
+                  </div>
                 <div class="mb-3">
                     <label for="title" class="form-label">Specialization<span class="text-danger">*</span></label>
                     <input type="text" class="form-control" name="specialization" id="title" required>
@@ -295,6 +299,7 @@ html{
                         <label for="state" class="form-label">state<span class="text-danger">*</span></label>
                         <input type="text" class="form-control" name="state" id="phone" required>
                     </div>
+                   
                     <div class="col-md-6 mb-3">
                         <label for="email" class="form-label">Email<span class="text-danger">*</span></label>
                         <input type="email" class="form-control" name="email" id="email" required>
@@ -522,6 +527,7 @@ html{
       const formData = {
         first_name: this.first_name.value,
         last_name: this.last_name.value,
+        phone: this.phone.value,
         email: this.email.value,
         specialization: this.specialization.value,
         state: this.state.value,

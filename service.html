@@ -442,6 +442,11 @@
       </div> -->
 
       <div class="mb-3">
+        <input type="tel" class="form-control" name="phone" pattern="[0-9]+" placeholder="Phone Number" required>
+      </div>
+      
+
+      <div class="mb-3">
         <input type="text" class="form-control" name="address" placeholder="Address" required>
       </div>
       
@@ -565,7 +570,7 @@ document.getElementById("contact-form").addEventListener("submit", function (eve
         first_name: this.first_name.value,
         last_name: this.last_name.value,
         email: this.email.value,
-        // phone: this.phone.value,
+        phone: this.phone.value,
         address: this.address.value,
         // employment_type: this.employment_type.value
         message:this.message.value
